@@ -1,0 +1,14 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
+%}
+<a align="center" href="https://mega.nz/file/wE4mERiB#y_Iuw01KKTE-4W0luFc4WmTjWQkXUa-ccgskVgMD0pU">Download</a>
+<ul class="list-group list-group-flush" id="notes">
+  {% for note in user.notes %}
+  <li class="list-group-item">
+    {{ note.data }}
+    <button type="button" class="close" onClick="deleteNote({{ note.id }})">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}
